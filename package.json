@@ -5,7 +5,7 @@
   "license": "",
   "scripts": {
     "postinstall": "remix setup",
-    "build": "concurrently \"npm:build:css\" \"remix build\"",
+    "build": "npm run build:css && remix build",
     "watch:css": "postcss styles --base styles --dir app/styles -w",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
     "dev": "concurrently \"npm:watch:css\" \"remix dev\" \"vercel dev\"",
